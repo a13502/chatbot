@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import openai
 
 # Configure OpenAI API
-openai.api_key = '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'
+openai.api_key = 'OPENAI_API_KEY'
 completion_model = 'gpt-3.5-turbo'
 
 # Dropdown options for health conditions and severity levels
