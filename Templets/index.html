@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Condition Chatbot</title>
+</head>
+<body>
+    <h1>Health Condition Chatbot</h1>
+    
+    <form method="POST" action="/">
+        <label for="condition">Select a health condition:</label>
+        <select id="condition" name="condition">
+            {% for condition in conditions %}
+            <option value="{{ condition }}">{{ condition }}</option>
+            
+            {% endfor %}
+        </select>
+        
+        <br><br>
+        
+        <label for="severity">Select the severity level:</label>
+        <select id="severity" name="severity">
+            {% for severity in severities %}
+            <option value="{{ severity }}">{{ severity }}</option>
+            {% endfor %}
+        </select>
+        
+        <br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    <br>
+    
+    {% if response %}
+    <div>
+        <strong>Response:</strong>
+        <p>{{ response }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
